@@ -18,7 +18,7 @@ read_rs2.fillna(0, inplace=True)
 if read_rs1.equals(read_rs2) is False:
     print('Find some differences!')
     ####### looking for differences
-    resBool = (read_rs1 != read_rs2).stack()  # Create Frame of comparison booleans
+    resBool = (read_rs1 != read_rs2).stack()  # Create Frame of comparison as booleans
     find_diff = pd.concat([read_rs1.stack()[resBool], read_rs2.stack()[resBool]], axis=1)
     find_diff.columns = ["Result_v1", "Result_v2"]
     print(find_diff)
